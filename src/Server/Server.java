@@ -9,22 +9,33 @@ class Server {
 
         try {
             ServerSocket serverSocket = new ServerSocket(1234);
+            // assign specific ip address
             Socket socket = serverSocket.accept();
             System.out.println("connected..........");
-            FileInputStream in = new FileInputStream("D:\\Engenieering\\HossamHaggag-2.pdf");
+            // server connected successfully
+            FileInputStream in = new FileInputStream("path.type");
+            // read and prepare your file that you want to broadcast
             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-            int r;
-            while ((r = in.read()) != -1) {
-                out.write(r);
-
+            int chars;
+            while ((chars = in.read()) != -1) {
+                out.write(chars);
+                // send file via connection to the clients
             }
-            System.out.println("\nFiletranfer Completed");
+            System.out.println("\nFiletrasnfer Completed");
+            // Data transfered Successfully
             socket.close();
             serverSocket.close();
+            // close connection and end task
 
         } catch (SocketException socketException) {
             System.out.println(socketException);
-            // TODO: handle exception
+            // print if there is error in connection
+        } catch (NullPointerException nullPointerException) {
+            System.out.println(nullPointerException);
+            // print if there is error in variabls
+        } catch (FileNotFoundException fileNotFoundException) {
+            System.out.println(fileNotFoundException);
+            // print if there is error in file
         }
 
     }
