@@ -1,7 +1,7 @@
 ## Server - Client Project
 
-Distriputed Systems
-CCE Program
-Faculty of Engineering
+Distriputed Systems -
+CCE Program -
+Faculty of Engineering -
 Mansoura University
 
